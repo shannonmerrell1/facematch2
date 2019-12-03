@@ -355,7 +355,7 @@ cards.forEach(card => card.addEventListener('keydown', function(event){
         if(event.which===13){
             // if(event.keyDown===13){
           console.log("enter pressed");
-          flipOneCard(this);
+
           flipOneCard.call(this);
         }}));
 
