@@ -1,0 +1,363 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <style>
+
+      .gridContainer{
+
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto auto auto auto;
+        /* width: 100vw; */
+        height: 100vh;
+        }
+
+       /* div:focus img{ */
+      div:focus{
+      /* .headshot:focus img{ */
+      /* div:focus, div:active{ */
+      border: 5px solid #990000;
+      border-color:red;
+      }
+
+      /* <div class ="headshot" id = "image5">
+            <img class = "front studentimage" src="images/Kevin.png" alt= "Kevin Lee"/>
+            <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+      </div> */
+
+
+      .headshot{
+        background-color: transparent;
+        overflow: hidden;
+        text-align: center;
+        background-color: white;
+        height: 260px;
+        /* border: 2px solid #CCC; */
+        margin: 40px 0;
+        /* rotation speed */
+        transition: transform 1.35s;
+        perspective: 600px;
+        transform: scale(1)
+        transition-style:preserve-3d;
+
+      }
+
+
+      .memory-card:active{
+        transform: rotateY(180deg);
+        transform: scale(.97);
+        transition: transform 5s;
+      }
+
+
+      .headshot.is-flipped {
+        background-color: transparent;
+        transform: rotateY(180deg);
+      }
+
+
+
+      .is-flipped
+      .back
+      {
+        /* transition: opacity 4s; */
+        backface-visibility: hidden;
+        /* 0% display:none ; opacity: 100; */
+        /* 1% display: block ; opacity: 98; */
+        100% display: block ; opacity: 0;
+      }
+
+      .studentimage {
+        left: 15%;
+        right: 15%;
+        top: 1%;
+        bottom: 1%;
+        position: absolute;
+      }
+
+
+      .front {
+        width: 250px;
+        height: auto;
+      }
+
+      .back {
+        width: 255px;
+        height: auto;
+      }
+
+      .studentimage {
+        width: 250px;
+        height:auto;
+        left: 15%;
+        right: 15%;
+        top: 1%;
+        bottom: 1%;
+        position: absolute;
+      }
+
+      .class{
+        top: 50%;
+      }
+
+      img{
+        width: 100%;
+        text-align: center;
+      }
+      #image1{
+        grid-column: 1/span 1;
+        grid-row:1 / span 1;
+
+      }
+      #image2{
+        grid-column: 2/span 1;
+        grid-row:1 / span 1;
+
+      }
+      #image3{
+        grid-column: 3/span 1;
+        grid-row:1 / span 1;
+
+      }
+      #image4{
+        grid-column: 4/span 1;
+        grid-row:1 / span 1;
+
+      }
+      #image5{
+        grid-column: 1/span 1;
+        grid-row:2 / span 1;
+
+      }
+      #image6{
+        grid-column: 2/span 1;
+        grid-row:2 / span 1;
+      }
+      #image7{
+        grid-column: 3/span 1;
+        grid-row:2 / span 1;
+      }
+      #image8{
+        grid-column: 4/span 1;
+        grid-row:2 / span 1;
+      }
+      #image9{
+        grid-column: 1/span 1;
+        grid-row:3 / span 1;
+      }
+      #image10{
+        grid-column: 2/span 1;
+        grid-row:3 / span 1;
+      }
+      #image11{
+        grid-column: 3/span 1;
+        grid-row:3 / span 1;
+      }
+      #image12{
+        grid-column: 4/span 1;
+        grid-row:3 / span 1;
+      }
+      #image13{
+        grid-column: 1/span 1;
+        grid-row:4 / span 1;
+      }
+      #image14{
+        grid-column: 2/span 1;
+        grid-row:4 / span 1;
+      }
+      #image15{
+        grid-column: 3/span 1;
+        grid-row:4 / span 1;
+      }
+      #image16{
+        grid-column: 4/span 1;
+        grid-row:4 / span 1;
+      }
+      #buttonid{
+        grid-column: 1/span 1;
+        grid-row:5 / span 1;
+      }
+/*
+      https://www.w3schools.com/howto/howto_css_flip_card.asp */
+/* use let */
+</style>
+
+
+
+  <title>Document</title>
+</head>
+
+<body>
+
+
+<main class = "gridContainer">
+
+
+    <button id="buttonid">Shuffle</button>
+
+
+
+    <div class ="headshot" tabindex="1"  id = "image1">
+        <img class = "front studentimage" src="images/Iain.png" alt="IainGraham"/>
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+    </div>
+
+    <div class ="headshot" tabindex="2" id = "image2">
+        <img class = "front studentimage" src="images/Iain.png" alt="IainGraham"/>
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+    </div>
+
+    <div class ="headshot" tabindex="3" id = "image3">
+        <img class = "front studentimage" src="images/Zihau.png" alt="Zihau Zhu"/>
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+    </div>
+
+    <div class ="headshot" tabindex="4"  id = "image4">
+        <img class = "front studentimage" src="images/Zihau.png" alt="Zihau Zhu"/>
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+    </div>
+
+    <div class ="headshot" tabindex="5"  id = "image5">
+          <img class = "front studentimage" src="images/Kevin.png" alt= "Kevin Lee"/>
+          <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+    </div>
+
+    <div class ="headshot" tabindex="6"  id = "image6">
+          <img class = "front studentimage" src="images/Kevin.png" alt= "Kevin Lee"/>
+          <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+    </div>
+
+    <div class ="headshot" tabindex="7" id = "image7">
+        <img class = "front studentimage" src="images/Zhenning.png" alt="Zhenning Chen"/>
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+    </div>
+
+    <div class ="headshot" tabindex="8"  id = "image8">
+        <img class = "front studentimage" src="images/Zhenning.png" alt="Zhenning Chen"/>
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface"/>
+    </div>
+
+    <div class ="headshot" tabindex="9" id = "image9">
+        <img class = "front studentimage" src="images/Riddhi.png" alt="Riddhi"/>
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface">
+    </div>
+
+    <div class ="headshot" tabindex="10" id = "image10">
+        <img class = "front studentimage" src="images/Riddhi.png" alt="Riddhi"/>
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface">
+    </div>
+
+    <div class ="headshot" tabindex="11"  id = "image11">
+        <img class = "front studentimage" src="images/Stephen.png" alt="Stephen">
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface">
+    </div>
+
+    <div class ="headshot" tabindex="12"  id = "image12">
+        <img class = "front studentimage" src="images/Stephen.png" alt="Stephen">
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface">
+    </div>
+
+    <div class ="headshot" tabindex="13"  id = "image13">
+        <img class = "front studentimage" src="images/Tess.png" alt="Tess">
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface">
+    </div>
+
+    <div class ="headshot" tabindex="14"  id = "image14">
+        <img class = "front studentimage" src="images/Tess.png" alt="Tess">
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface">
+    </div>
+
+    <div class ="headshot" tabindex="15" id = "image15">
+        <img class = "front studentimage" src="images/Amber.png" alt="Yue Ma">
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface">
+    </div>
+
+    <div class ="headshot" tabindex="16" id = "image16">
+        <img class = "front studentimage" src="images/Amber.png" alt="Yue Ma">
+        <img class = "back studentimage" src="images/back.png" alt="memory card backface">
+    </div>
+
+</main>
+
+
+
+</body>
+
+
+<script  type="text/javascript">
+allCards = $(".containerMain")
+// -UTILIZED Fisher–Yates shuffle algorithm for Function: FROM  https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+var myArray = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
+$("#buttonid").click(function(){
+  console.log("buttonpushed")
+});
+$("#buttonid").click(function(){
+  shuffledNumbers = shuffle(myArray);
+  shuffledNumbers.forEach(shuffleId);
+});
+//select all divs with class headshot and randomly assign a new id
+function shuffleId(value,index){
+    var headShot = document.getElementsByClassName('headshot')
+    headi = headShot[index]
+    $(headi).attr('id', 'image'+value);
+    console.log(value)
+}
+
+const cards = document.querySelectorAll('.headshot');
+
+let flippedCard = false;
+let firstCard, secondCard;
+
+function flipOneCard(){
+  // console.log("I was clicked!")
+  // console.log(this);
+  this.classList.toggle('is-flipped')
+  console.log('past toggle')
+//reference for flip match - similar logic, but slightly different syntax https://www.youtube.com/watch?v=ZniVgo8U7ek
+  if(flippedCard == false){
+    flippedCard = true;
+    firstCard = this;
+    console.log(firstCard)
+  } else {
+
+    flippedCard = false;
+    secondCard = this;
+
+    if (firstCard.getElementsByTagName('img')[0].alt ===secondCard.getElementsByTagName('img')[0].alt){
+      firstCard.removeEventListener('click', flipOneCard);
+      secondCard.removeEventListener('click', flipOneCard);
+      firstCard.removeEventListener('keydown', flipOneCard);
+      secondCard.removeEventListener('keydown', flipOneCard);
+    } else {
+      setTimeout(() =>{
+    firstCard.classList.remove('is-flipped')
+    secondCard.classList.remove('is-flipped')
+  },2000);
+    }
+  }
+}
+
+cards.forEach(card => card.addEventListener('click', flipOneCard))
+
+cards.forEach(card => card.addEventListener('keydown', function(event){
+        if(event.which===13){
+            // if(event.keyDown===13){
+          console.log("enter pressed");
+          flipOneCard(this);
+          flipOneCard.call(this);
+        }}));
+
+</script>
+</html>
